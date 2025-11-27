@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -302,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c3a679de0f45247b83148ac26f8e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 30
 --- !u!114 &393908216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +328,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!4 &393908221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8658466505895769351, guid: 96dfbb30f1a11d04f90d7ff6788a96f5, type: 3}
+  m_PrefabInstance: {fileID: 6859908257571172682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &393908222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393908211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c711340b8f9cea548a9886c8baf6db09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MPU6050Controller
+  portName: COM7
+  baudRate: 115200
+  targetObject: {fileID: 393908221}
+  maxForwardSpeed: 3
+  turnSensitivity: 2
+  accelerationThreshold: 0.2
+  invertY: 1
+  smoothingFactor: 0.979
+  yawDeadZone: 0.5
+  accelDeadZone: 0.05
+  enableDebugLog: 1
+  logRawData: 1
+  logParsedData: 1
 --- !u!1 &395753557
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +960,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8146727589089548829, guid: 96dfbb30f1a11d04f90d7ff6788a96f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 393908215}
+    - targetCorrespondingSourceObject: {fileID: 8146727589089548829, guid: 96dfbb30f1a11d04f90d7ff6788a96f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 393908222}
   m_SourcePrefab: {fileID: 100100000, guid: 96dfbb30f1a11d04f90d7ff6788a96f5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
